@@ -1,0 +1,39 @@
+\* Production_Facility *\
+Minimize
+_objective_: 15 x_Ba_Bramt + 17 x_Ba_Missi + 9 x_Mh_Bramt + 12 x_Mh_Missi
+ + 6 x_NY_Bramt + 5 x_NY_Missi + 8 x_Rm_Bramt + 7 x_Rm_Missi + 3 x_Va_Bramt
+ + 4 x_Va_Missi + 160 y_Ba + 295 y_Mh + 315 y_NY + 305 y_Rm + 200 y_Va
+Subject To
+Must_be_open_to_supplyBaBramt: x_Ba_Bramt - y_Ba <= 0
+Must_be_open_to_supplyBaMissi: x_Ba_Missi - y_Ba <= 0
+Must_be_open_to_supplyMhBramt: x_Mh_Bramt - y_Mh <= 0
+Must_be_open_to_supplyMhMissi: x_Mh_Missi - y_Mh <= 0
+Must_be_open_to_supplyNYBramt: x_NY_Bramt - y_NY <= 0
+Must_be_open_to_supplyNYMissi: x_NY_Missi - y_NY <= 0
+Must_be_open_to_supplyRmBramt: x_Rm_Bramt - y_Rm <= 0
+Must_be_open_to_supplyRmMissi: x_Rm_Missi - y_Rm <= 0
+Must_be_open_to_supplyVaBramt: x_Va_Bramt - y_Va <= 0
+Must_be_open_to_supplyVaMissi: x_Va_Missi - y_Va <= 0
+No_more_than_three: y_Ba + y_Mh + y_NY + y_Rm + y_Va <= 3
+Satisfy_demand_Bramt: x_Ba_Bramt + x_Mh_Bramt + x_NY_Bramt + x_Rm_Bramt
+ + x_Va_Bramt = 1
+Satisfy_demand_Missi: x_Ba_Missi + x_Mh_Missi + x_NY_Missi + x_Rm_Missi
+ + x_Va_Missi = 1
+_Va_should_be_open: y_Va = 1
+Binaries
+x_Ba_Bramt
+x_Ba_Missi
+x_Mh_Bramt
+x_Mh_Missi
+x_NY_Bramt
+x_NY_Missi
+x_Rm_Bramt
+x_Rm_Missi
+x_Va_Bramt
+x_Va_Missi
+y_Ba
+y_Mh
+y_NY
+y_Rm
+y_Va
+End
