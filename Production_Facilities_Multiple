@@ -1,0 +1,43 @@
+\* Production_Facilities_Multiple *\
+Minimize
+Obj: 15 x_Ba_Bramt + 17 x_Ba_Missi + 9 x_Mh_Bramt + 12 x_Mh_Missi
+ + 6 x_NY_half_Bramt + 5 x_NY_half_Missi + 6 x_NY_reg_Bramt + 5 x_NY_reg_Missi
+ + 8 x_Rm_Bramt + 7 x_Rm_Missi + 3 x_Va_Bramt + 4 x_Va_Missi + 160 y_Ba
+ + 295 y_Mh + 157.5 y_NY_half + 315 y_NY_reg + 305 y_Rm + 200 y_Va
+Subject To
+Only_one_option_should_be_selected: y_NY_half + y_NY_reg <= 1
+Satisfy_Capacity_Ba: x_Ba_Bramt + x_Ba_Missi - 27.5 y_Ba <= 0
+Satisfy_Capacity_Mh: x_Mh_Bramt + x_Mh_Missi - 21 y_Mh <= 0
+Satisfy_Capacity_NY_half: x_NY_half_Bramt + x_NY_half_Missi - 6.25 y_NY_half
+ <= 0
+Satisfy_Capacity_NY_reg: x_NY_reg_Bramt + x_NY_reg_Missi - 12.5 y_NY_reg <= 0
+Satisfy_Capacity_Rm: x_Rm_Bramt + x_Rm_Missi - 15 y_Rm <= 0
+Satisfy_Capacity_Va: x_Va_Bramt + x_Va_Missi - 25 y_Va <= 0
+Satisfy_demands_of_Bramt: x_Ba_Bramt + x_Mh_Bramt + x_NY_half_Bramt
+ + x_NY_reg_Bramt + x_Rm_Bramt + x_Va_Bramt >= 12.5
+Satisfy_demands_of_Missi: x_Ba_Missi + x_Mh_Missi + x_NY_half_Missi
+ + x_NY_reg_Missi + x_Rm_Missi + x_Va_Missi >= 29.5
+_C1: x_Ba_Missi + x_Mh_Missi + x_NY_half_Missi + x_NY_reg_Missi + x_Rm_Missi
+ + x_Va_Missi = 1
+_C2: x_Ba_Bramt + x_Mh_Bramt + x_NY_half_Bramt + x_NY_reg_Bramt + x_Rm_Bramt
+ + x_Va_Bramt = 1
+m_Must_be_open_to_supply_BaBramt: x_Ba_Bramt - y_Ba <= 0
+m_Must_be_open_to_supply_BaMissi: x_Ba_Missi - y_Ba <= 0
+m_Must_be_open_to_supply_MhBramt: x_Mh_Bramt - y_Mh <= 0
+m_Must_be_open_to_supply_MhMissi: x_Mh_Missi - y_Mh <= 0
+m_Must_be_open_to_supply_NY_halfBramt: x_NY_half_Bramt - y_NY_half <= 0
+m_Must_be_open_to_supply_NY_halfMissi: x_NY_half_Missi - y_NY_half <= 0
+m_Must_be_open_to_supply_NY_regBramt: x_NY_reg_Bramt - y_NY_reg <= 0
+m_Must_be_open_to_supply_NY_regMissi: x_NY_reg_Missi - y_NY_reg <= 0
+m_Must_be_open_to_supply_RmBramt: x_Rm_Bramt - y_Rm <= 0
+m_Must_be_open_to_supply_RmMissi: x_Rm_Missi - y_Rm <= 0
+m_Must_be_open_to_supply_VaBramt: x_Va_Bramt - y_Va <= 0
+m_Must_be_open_to_supply_VaMissi: x_Va_Missi - y_Va <= 0
+Binaries
+y_Ba
+y_Mh
+y_NY_half
+y_NY_reg
+y_Rm
+y_Va
+End
