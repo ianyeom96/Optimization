@@ -1,0 +1,93 @@
+\* Plant_Location_Problem *\
+Minimize
+_objective_function_: x_A_0 + 2 x_A_1 + 10 x_A_2 + 9 x_A_3 + 6 x_A_4 + 7 x_A_5
+ + 3 x_A_6 + 2 x_B_0 + 9 x_B_1 + 7 x_B_3 + 3 x_B_4 + 6 x_B_5 + 10 x_B_6
+ + 7 x_C_0 + 6 x_C_1 + x_C_2 + 5 x_C_3 + 3 x_C_4 + 10 x_C_5 + 5 x_C_6
+ + 6 x_D_0 + 5 x_D_1 + 10 x_D_2 + 2 x_D_3 + 6 x_D_4 + 3 x_D_5 + 6 x_D_6
+ + 6 x_E_0 + 4 x_E_1 + 6 x_E_2 + 3 x_E_3 + 7 x_E_4 + 2 x_E_5 + 6 x_E_6 + 5 y_A
+ + 7 y_B + 5 y_C + 6 y_D + 5 y_E
+Subject To
+satisfy_demand_0: x_A_0 + x_B_0 + x_C_0 + x_D_0 + x_E_0 = 1
+satisfy_demand_1: x_A_1 + x_B_1 + x_C_1 + x_D_1 + x_E_1 = 1
+satisfy_demand_2: x_A_2 + x_B_2 + x_C_2 + x_D_2 + x_E_2 = 1
+satisfy_demand_3: x_A_3 + x_B_3 + x_C_3 + x_D_3 + x_E_3 = 1
+satisfy_demand_4: x_A_4 + x_B_4 + x_C_4 + x_D_4 + x_E_4 = 1
+satisfy_demand_5: x_A_5 + x_B_5 + x_C_5 + x_D_5 + x_E_5 = 1
+satisfy_demand_6: x_A_6 + x_B_6 + x_C_6 + x_D_6 + x_E_6 = 1
+serve_from_existing_facilities_A_0: x_A_0 - y_A <= 0
+serve_from_existing_facilities_A_1: x_A_1 - y_A <= 0
+serve_from_existing_facilities_A_2: x_A_2 - y_A <= 0
+serve_from_existing_facilities_A_3: x_A_3 - y_A <= 0
+serve_from_existing_facilities_A_4: x_A_4 - y_A <= 0
+serve_from_existing_facilities_A_5: x_A_5 - y_A <= 0
+serve_from_existing_facilities_A_6: x_A_6 - y_A <= 0
+serve_from_existing_facilities_B_0: x_B_0 - y_B <= 0
+serve_from_existing_facilities_B_1: x_B_1 - y_B <= 0
+serve_from_existing_facilities_B_2: x_B_2 - y_B <= 0
+serve_from_existing_facilities_B_3: x_B_3 - y_B <= 0
+serve_from_existing_facilities_B_4: x_B_4 - y_B <= 0
+serve_from_existing_facilities_B_5: x_B_5 - y_B <= 0
+serve_from_existing_facilities_B_6: x_B_6 - y_B <= 0
+serve_from_existing_facilities_C_0: x_C_0 - y_C <= 0
+serve_from_existing_facilities_C_1: x_C_1 - y_C <= 0
+serve_from_existing_facilities_C_2: x_C_2 - y_C <= 0
+serve_from_existing_facilities_C_3: x_C_3 - y_C <= 0
+serve_from_existing_facilities_C_4: x_C_4 - y_C <= 0
+serve_from_existing_facilities_C_5: x_C_5 - y_C <= 0
+serve_from_existing_facilities_C_6: x_C_6 - y_C <= 0
+serve_from_existing_facilities_D_0: x_D_0 - y_D <= 0
+serve_from_existing_facilities_D_1: x_D_1 - y_D <= 0
+serve_from_existing_facilities_D_2: x_D_2 - y_D <= 0
+serve_from_existing_facilities_D_3: x_D_3 - y_D <= 0
+serve_from_existing_facilities_D_4: x_D_4 - y_D <= 0
+serve_from_existing_facilities_D_5: x_D_5 - y_D <= 0
+serve_from_existing_facilities_D_6: x_D_6 - y_D <= 0
+serve_from_existing_facilities_E_0: x_E_0 - y_E <= 0
+serve_from_existing_facilities_E_1: x_E_1 - y_E <= 0
+serve_from_existing_facilities_E_2: x_E_2 - y_E <= 0
+serve_from_existing_facilities_E_3: x_E_3 - y_E <= 0
+serve_from_existing_facilities_E_4: x_E_4 - y_E <= 0
+serve_from_existing_facilities_E_5: x_E_5 - y_E <= 0
+serve_from_existing_facilities_E_6: x_E_6 - y_E <= 0
+Binaries
+x_A_0
+x_A_1
+x_A_2
+x_A_3
+x_A_4
+x_A_5
+x_A_6
+x_B_0
+x_B_1
+x_B_2
+x_B_3
+x_B_4
+x_B_5
+x_B_6
+x_C_0
+x_C_1
+x_C_2
+x_C_3
+x_C_4
+x_C_5
+x_C_6
+x_D_0
+x_D_1
+x_D_2
+x_D_3
+x_D_4
+x_D_5
+x_D_6
+x_E_0
+x_E_1
+x_E_2
+x_E_3
+x_E_4
+x_E_5
+x_E_6
+y_A
+y_B
+y_C
+y_D
+y_E
+End

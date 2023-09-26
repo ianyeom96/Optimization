@@ -6,13 +6,6 @@ Obj: 15 x_Ba_Bramt + 17 x_Ba_Missi + 9 x_Mh_Bramt + 12 x_Mh_Missi
  + 295 y_Mh + 157.5 y_NY_half + 315 y_NY_reg + 305 y_Rm + 200 y_Va
 Subject To
 Only_one_option_should_be_selected: y_NY_half + y_NY_reg <= 1
-Satisfy_Capacity_Ba: x_Ba_Bramt + x_Ba_Missi - 27.5 y_Ba <= 0
-Satisfy_Capacity_Mh: x_Mh_Bramt + x_Mh_Missi - 21 y_Mh <= 0
-Satisfy_Capacity_NY_half: x_NY_half_Bramt + x_NY_half_Missi - 6.25 y_NY_half
- <= 0
-Satisfy_Capacity_NY_reg: x_NY_reg_Bramt + x_NY_reg_Missi - 12.5 y_NY_reg <= 0
-Satisfy_Capacity_Rm: x_Rm_Bramt + x_Rm_Missi - 15 y_Rm <= 0
-Satisfy_Capacity_Va: x_Va_Bramt + x_Va_Missi - 25 y_Va <= 0
 Satisfy_demands_of_Bramt: x_Ba_Bramt + x_Mh_Bramt + x_NY_half_Bramt
  + x_NY_reg_Bramt + x_Rm_Bramt + x_Va_Bramt >= 12.5
 Satisfy_demands_of_Missi: x_Ba_Missi + x_Mh_Missi + x_NY_half_Missi
