@@ -6,41 +6,41 @@ Objective: 15 x_Ba_Bramt + 17 x_Ba_Missi + 9 x_Mh_Bramt + 12 x_Mh_Missi
  + 295 y_Mh_NY_reg + 157.5 y_NY_NY_half + 315 y_NY_NY_reg + 305 y_Rm_NY_half
  + 305 y_Rm_NY_reg + 200 y_Va_NY_half + 200 y_Va_NY_reg
 Subject To
-Satisfy_Capacity_and_DemandBa: 12.5 x_Ba_Bramt + 29.5 x_Ba_Missi
- - 160 y_Ba_NY_half - 160 y_Ba_NY_reg - 295 y_Mh_NY_half - 295 y_Mh_NY_reg
- - 157.5 y_NY_NY_half - 315 y_NY_NY_reg - 305 y_Rm_NY_half - 305 y_Rm_NY_reg
- - 200 y_Va_NY_half - 200 y_Va_NY_reg <= 0
-Satisfy_Capacity_and_DemandMh: 12.5 x_Mh_Bramt + 29.5 x_Mh_Missi
- - 160 y_Ba_NY_half - 160 y_Ba_NY_reg - 295 y_Mh_NY_half - 295 y_Mh_NY_reg
- - 157.5 y_NY_NY_half - 315 y_NY_NY_reg - 305 y_Rm_NY_half - 305 y_Rm_NY_reg
- - 200 y_Va_NY_half - 200 y_Va_NY_reg <= 0
-Satisfy_Capacity_and_DemandNY: 12.5 x_NY_Bramt + 29.5 x_NY_Missi
- - 160 y_Ba_NY_half - 160 y_Ba_NY_reg - 295 y_Mh_NY_half - 295 y_Mh_NY_reg
- - 157.5 y_NY_NY_half - 315 y_NY_NY_reg - 305 y_Rm_NY_half - 305 y_Rm_NY_reg
- - 200 y_Va_NY_half - 200 y_Va_NY_reg <= 0
-Satisfy_Capacity_and_DemandRm: 12.5 x_Rm_Bramt + 29.5 x_Rm_Missi
- - 160 y_Ba_NY_half - 160 y_Ba_NY_reg - 295 y_Mh_NY_half - 295 y_Mh_NY_reg
- - 157.5 y_NY_NY_half - 315 y_NY_NY_reg - 305 y_Rm_NY_half - 305 y_Rm_NY_reg
- - 200 y_Va_NY_half - 200 y_Va_NY_reg <= 0
-Satisfy_Capacity_and_DemandVa: 12.5 x_Va_Bramt + 29.5 x_Va_Missi
- - 160 y_Ba_NY_half - 160 y_Ba_NY_reg - 295 y_Mh_NY_half - 295 y_Mh_NY_reg
- - 157.5 y_NY_NY_half - 315 y_NY_NY_reg - 305 y_Rm_NY_half - 305 y_Rm_NY_reg
- - 200 y_Va_NY_half - 200 y_Va_NY_reg <= 0
-every_DC_Bramt_is_served_by_at_least_one_facility: x_Ba_Bramt + x_Mh_Bramt
+Ba_satisfying_demand: 12.5 x_Ba_Bramt + 29.5 x_Ba_Missi - 160 y_Ba_NY_half
+ - 160 y_Ba_NY_reg <= 0
+Mh_satisfying_demand: 12.5 x_Mh_Bramt + 29.5 x_Mh_Missi - 295 y_Mh_NY_half
+ - 295 y_Mh_NY_reg <= 0
+NY_satisfying_demand: 12.5 x_NY_Bramt + 29.5 x_NY_Missi - 157.5 y_NY_NY_half
+ - 315 y_NY_NY_reg <= 0
+Rm_satisfying_demand: 12.5 x_Rm_Bramt + 29.5 x_Rm_Missi - 305 y_Rm_NY_half
+ - 305 y_Rm_NY_reg <= 0
+Va_satisfying_demand: 12.5 x_Va_Bramt + 29.5 x_Va_Missi - 200 y_Va_NY_half
+ - 200 y_Va_NY_reg <= 0
+at_least_one_NY__can_be_chosen: y_NY_NY_half + y_NY_NY_reg <= 1
+every_DC_Bramt__is_served_by_at_least_one_facility: x_Ba_Bramt + x_Mh_Bramt
  + x_NY_Bramt + x_Rm_Bramt + x_Va_Bramt = 1
-every_DC_Missi_is_served_by_at_least_one_facility: x_Ba_Missi + x_Mh_Missi
+every_DC_Missi__is_served_by_at_least_one_facility: x_Ba_Missi + x_Mh_Missi
  + x_NY_Missi + x_Rm_Missi + x_Va_Missi = 1
-m_Must_be_open_to_supply_BaBramt: x_Ba_Bramt - y_Ba_NY_half - y_Ba_NY_reg <= 0
-m_Must_be_open_to_supply_BaMissi: x_Ba_Missi - y_Ba_NY_half - y_Ba_NY_reg <= 0
-m_Must_be_open_to_supply_MhBramt: x_Mh_Bramt - y_Mh_NY_half - y_Mh_NY_reg <= 0
-m_Must_be_open_to_supply_MhMissi: x_Mh_Missi - y_Mh_NY_half - y_Mh_NY_reg <= 0
-m_Must_be_open_to_supply_NYBramt: x_NY_Bramt - y_NY_NY_half - y_NY_NY_reg <= 0
-m_Must_be_open_to_supply_NYMissi: x_NY_Missi - y_NY_NY_half - y_NY_NY_reg <= 0
-m_Must_be_open_to_supply_RmBramt: x_Rm_Bramt - y_Rm_NY_half - y_Rm_NY_reg <= 0
-m_Must_be_open_to_supply_RmMissi: x_Rm_Missi - y_Rm_NY_half - y_Rm_NY_reg <= 0
-m_Must_be_open_to_supply_VaBramt: x_Va_Bramt - y_Va_NY_half - y_Va_NY_reg <= 0
-m_Must_be_open_to_supply_VaMissi: x_Va_Missi - y_Va_NY_half - y_Va_NY_reg <= 0
-one_should_be_chosen_NY: y_NY_NY_half + y_NY_NY_reg <= 1
+m_Must_be_open_to_supply_Ba_Bramt: x_Ba_Bramt - y_Ba_NY_half - y_Ba_NY_reg
+ <= 0
+m_Must_be_open_to_supply_Ba_Missi: x_Ba_Missi - y_Ba_NY_half - y_Ba_NY_reg
+ <= 0
+m_Must_be_open_to_supply_Mh_Bramt: x_Mh_Bramt - y_Mh_NY_half - y_Mh_NY_reg
+ <= 0
+m_Must_be_open_to_supply_Mh_Missi: x_Mh_Missi - y_Mh_NY_half - y_Mh_NY_reg
+ <= 0
+m_Must_be_open_to_supply_NY_Bramt: x_NY_Bramt - y_NY_NY_half - y_NY_NY_reg
+ <= 0
+m_Must_be_open_to_supply_NY_Missi: x_NY_Missi - y_NY_NY_half - y_NY_NY_reg
+ <= 0
+m_Must_be_open_to_supply_Rm_Bramt: x_Rm_Bramt - y_Rm_NY_half - y_Rm_NY_reg
+ <= 0
+m_Must_be_open_to_supply_Rm_Missi: x_Rm_Missi - y_Rm_NY_half - y_Rm_NY_reg
+ <= 0
+m_Must_be_open_to_supply_Va_Bramt: x_Va_Bramt - y_Va_NY_half - y_Va_NY_reg
+ <= 0
+m_Must_be_open_to_supply_Va_Missi: x_Va_Missi - y_Va_NY_half - y_Va_NY_reg
+ <= 0
 Binaries
 y_Ba_NY_half
 y_Ba_NY_reg
